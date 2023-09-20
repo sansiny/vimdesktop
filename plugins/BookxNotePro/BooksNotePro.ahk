@@ -25,9 +25,18 @@ BookxNotePro:
     vim.comment("BookxNotePro_GotoTCInNewTabX>", "使用TC在新标签页打开当前目录，并关闭BookxNotePro")
     vim.SetWin("BookxNotePro", "Qt5150QWindowIcon")
 	*/
+	; vim.comment("<pgdn>", "向下翻页")
+	; vim.comment("<pgup>", "向上翻页")
+	; vim.comment("<down>", "向下")
+	; vim.comment("<up>", "向上")
+    vim.SetWin("BookxNotePro", "Qt5150QWindowIcon","BookxNotePro.exe")
     vim.SetMode("normal", "BookxNotePro")
-	vim.SetAction("<pgdn>", "向下")
-	vim.SetAction("<pgup>", "向上")
+	; vim.SetAction("<pgdn>", "向下")
+	; vim.SetAction("<pgup>", "向上")
+    vim.map("j", "<down>", "BookxNotePro")
+    vim.map("k", "<up>", "BookxNotePro")
+    ; vim.map("<c-f>", "<pgdn>", "BookxNotePro")
+    ; vim.map("<c-b>", "<pgup>", "BookxNotePro")
 
     ; insert模式
     /* vim.mode("insert", "BookxNotePro") */
@@ -65,11 +74,18 @@ BookxNotePro:
 	*/
 
 return
-<pgdn>:
-	send,{PgDn}
+<up>:
+	send,{Up}
 return
-<pgup>:
-	send,{PgUp}
+<down>:
+	send,{Down}
+return
+; <pgdn>:
+; 	send,{PgDn}
+; return
+; <pgup>:
+; 	send,{PgUp}
+; return
 
 /* ; 对指定控件使用insert模式 */
 /* BookxNotePro_ForceInsertMode() */
