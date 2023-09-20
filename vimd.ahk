@@ -37,3 +37,5 @@ return
 #Include %A_ScriptDir%\plugins\Plugins.ahk
 ; 用户自定义配置
 #Include *i %A_ScriptDir%\custom.ahk
+; #Include d:\github\vim\site\samples\quickkeys.ahk
+; #Include d:\github\vim_ahk\vim.ahk 
